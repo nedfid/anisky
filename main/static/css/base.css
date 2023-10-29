@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+    background-color: #141414;
+    color: #dadcdf;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* MAIN */
+.main {
+    margin-top: calc(62px + 1.5rem);
+}
+
+.main .container{
+    display: flex;
+    gap: 1.5rem;
+}
+
+.main .left-menu .items{
+    position: sticky;
+    top: calc(62px + 1.5rem);
+}
+
+.main .left-menu i{
+    margin-right: 10px;
+    transition: all .2s ease-in-out;
+}
+
+.main .left-menu .items {
+    list-style: none;
+    background-color: #222222;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #323334;
+}
+
+.main .left-menu .items h2{
+    text-align: center;
+    margin: 10px;
+}
+
+hr{
+    border: none;
+    height: 1px;
+    margin: 10px 0;
+    background-color: #323334;
+}
+
+.main .left-menu .items .item {
+    width: 240px;
+}
+
+.main .left-menu .items .item a{
+    padding: 10px;
+    display: block;
+    color: #dadcdf;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all .2s ease-in-out;
+}
+
+.main .left-menu .items .item a:hover{
+    background-color: #2b2b2b;
+}
+
+.main .left-menu .items .item a:hover i{
+    color: #334cd0;
+}
+
+.main .content {
+    width: 100%;
+}
+
+
+/* ANIME LIST */
+.title-content {
+    padding: 10px 20px;
+    background-color: #222222;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #323334;
+    /* text-align: center; */
+}
+
+.anime-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.anime-list .item {
+    display: block;
+    text-decoration: none;
+    color: #bbbbbb;
+}
+
+.anime-list .item p {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 8px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    line-clamp: 1;
+    box-orient: vertical;
+}
+
+.anime-list .item .info {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    justify-content: space-between;
+}
+
+.anime-list .item:hover img{
+    transform: translateY(-6px);
+}
+
+.anime-list .item:hover p{
+    color: #dadcdf;
+}
+
+.anime-list .item img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: all .2s ease-in-out;
+}

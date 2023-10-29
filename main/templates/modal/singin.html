@@ -1,0 +1,20 @@
+{% extends 'modal/default.html' %}
+
+{% block id %}singin{% endblock id %}
+
+{% block modal_content %}
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <div class="item">
+            <label for="username_id">Никнейм</label>
+            <input id="username_id" name='username' type="text" placeholder="Ваш никнейм...">
+        </div>
+        <div class="item">
+            <label for="password_id">Пароль</label>
+            <input id="password_id" name='password' type="password" placeholder="Ваш пароль">
+        </div>
+        <div class="item">
+            <button type="submit">Войти</button>
+        </div>
+    </form>
+{% endblock modal_content %}

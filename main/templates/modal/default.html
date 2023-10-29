@@ -1,0 +1,16 @@
+{% load static %}
+
+{% block connection %}
+    <link rel="stylesheet" href="{% static 'css/modal.css' %}" />
+{% endblock connection %}
+
+<div class="modal" id="modal_{% block id %}{% endblock id %}">
+    <div class='close-modal'></div>
+    <div class="box">
+        <div class="title">
+            <h1>Авторизация</h1>
+        </div>
+        <hr>
+        {% block modal_content %}{% endblock modal_content %}
+    </div>
+</div>

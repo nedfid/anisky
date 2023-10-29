@@ -1,0 +1,31 @@
+{% extends 'main/pattern.html' %}
+
+{% load static %}
+
+{% block connection %}
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}" />
+{% endblock connection %}
+
+{% block content %}
+    <div class="title-content">
+        <h2>Пользователи</h2>
+    </div>
+
+    <section class='user-list'>
+        {% for u in users %}
+            <a href="{% url 'user_profile' u.username %}" class='user'>
+                <img class="avatar" src="{{ u.profile.user_avatar.url }}" alt="">
+                <div class="un">
+                    <div class="name">
+                        <span>Имя:</span>
+                        <h3>{{ u.first_name }}</h3>
+                    </div>
+                    <div class="username">
+                        <span>Юзернейм:</span>
+                        <p>u/{{ u.username }}</p>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+    </section>
+{% endblock content %}

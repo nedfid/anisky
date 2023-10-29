@@ -1,0 +1,37 @@
+<article class="left-menu">
+    <ul class="items">
+        <h2>Меню</h2>
+        <hr>
+        <li class="item">
+            <a href="{% url 'home' %}"><i class='bx bxs-home' ></i>Главная</a>
+        </li>
+        <li class="item">
+            <a href="#"><i class='bx bx-tv' ></i>Аниме</a>
+        </li>
+        <li class="item">
+            <a href="#"><i class='bx bxs-conversation' ></i>Форум</a>
+        </li>
+        <li class="item">
+            <a href="{% url 'user_all' %}"><i class='bx bxs-user-account' ></i>Пользователи</a>
+        </li>
+        {% if user.is_authenticated %}
+            <hr>
+            <li class="item">
+                <a href="#"><i class='bx bxs-message-dots' ></i>Чат</a>
+            </li>
+            <li class="item">
+                <a href="#"><i class='bx bxs-grid-alt'></i>Мои полки</a>
+            </li>
+            <li class="item">
+                <a href="#"><i class='bx bxs-bookmark' ></i>Избранное</a>
+            </li>
+            <hr>
+            <li class="item">
+                <a href="{% url 'user_settings' user.username %}"><i class='bx bxs-cog' ></i>Настройки</a>
+            </li>
+            <li class="item">
+                <a href="{% url 'logout' %}"><i class='bx bx-log-out' ></i>Выйти</a>
+            </li>
+        {% endif %}
+    </ul>
+</article>

@@ -1,0 +1,56 @@
+{% extends 'main/pattern.html' %}
+
+{% load static %}
+
+{% block connection %}
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}" />
+{% endblock connection %}
+
+{% block content %}
+    <div class="account">
+        <div class="user-poster">
+            <a href="{{ u.profile.user_poster.url }}" data-fancybox data-caption="{{ u.first_name }} (u/{{ u.username }})">
+                <img class="img-poster" src="{{ u.profile.user_poster.url }}" alt="">
+            </a>
+        </div>
+        <div class="info-group">
+            <div class="user-info">
+                <div class="user-avatar">
+                    <a href="{{ u.profile.user_avatar.url }}" data-fancybox data-caption="{{ u.first_name }} (u/{{ u.username }})">
+                        <img src="{{ u.profile.user_avatar.url }}" alt="">
+                    </a>
+                </div>
+                <div class="un">
+                    <div class="name">
+                        <span>Имя:</span>
+                        <h3>{{ u.first_name }}</h3>
+                    </div>
+                    <div class="username">
+                        <span>Юзернейм:</span>
+                        <p>u/{{ u.username }}</p>
+                    </div>
+                </div>
+                <div class="user-btn">
+                    <button class="sub"><i class='bx bxs-plus-circle' ></i>Подписаться</button>
+                    <button class="complaint"><i class='bx bxs-flag-alt' ></i>Жалоба</button>
+                </div>
+            </div>
+            <div class="user-info">
+                <div class="un">
+                    <div class="bio">
+                        <span>Обо мне:</span>
+                        <p>{{ u.profile.bio }}</p>
+                    </div>
+                    <div class="date">
+                        <span>Дата регистрации:</span>
+                        <p>{{ u.date_joined|date }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        
+    </div>
+    
+{% endblock content %}
